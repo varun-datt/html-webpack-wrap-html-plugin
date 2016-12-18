@@ -1,0 +1,33 @@
+{
+	"name": "html-webpack-wrap-html-plugin",
+	"version": "0.0.1",
+	"description": "simplifies wrap HTML files to serve your webpack bundles",
+	"main": "index.js",
+	"scripts": {
+		"prepublish": "npm run test",
+		"test": "jasmine"
+	},
+	"keywords": [
+		"html-webpack-plugin",
+		"webpack",
+		"wrap",
+		"html",
+		"plugin"
+	],
+	"author": "zman <hxfdarling@hotmail.com> (https://github.com/hxfdarling)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hxfdarling/html-webpack-wrap-html-plugin.git"
+	},
+	"bugs": {
+		"url": "https://github.com/hxfdarling/html-webpack-wrap-html-plugin/issues"
+	},
+	"homepage": "https://github.com/hxfdarling/html-webpack-wrap-html-plugin#readme",
+	"devDependencies": {
+		"html-loader": "^0.4.4",
+		"html-webpack-plugin": "^2.24.1",
+		"jasmine": "^2.5.2",
+		"webpack": "^1.14.0"
+	}
+}
