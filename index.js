@@ -16,7 +16,7 @@ HtmlWebpackWrapHtmlPlugin.prototype.apply = function(compiler) {
 				htmlPluginData.html += "\n" + options.after;
 			}
 
-			callback();
+			callback(null, htmlPluginData);
 		});
 	});
 };
