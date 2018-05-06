@@ -1,6 +1,6 @@
 # HtmlWebpackWrapHtmlPlugin
 This is a webpack plugin that simplifies wrap HTML files to serve your webpack bundles. 
-Enhances html-webpack-plugin functionality by add `{before:"<!--before-->",after:"<!--after-->"}` option to allow you to wrap html content.
+Enhances html-webpack-plugin functionality by add `{before:"<!--before-->",after:"<!--after-->"}` option to allow you to wrap html content. Supports webpack 4.
 ## install by npm
 ```npm
 npm i --save-dev HtmlWebpackPlugin HtmlWebpackWrapHtmlPlugin

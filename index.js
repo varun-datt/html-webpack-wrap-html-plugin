@@ -1,23 +1,23 @@
-'use strict';
-var assert = require('assert');
 
-function HtmlWebpackWrapHtmlPlugin(options) {
-	assert.equal(options, undefined, "HtmlWebpackWrapHtmlPlugin not need options");
+class HtmlWebpackWrapHtmlPlugin {
+  apply(compiler) {
+    compiler.hooks.compilation.tap('HtmlWebpackWrapHtmlPlugin', compilation => {
+    // compilation.options.htmlElements = compilation.options.htmlElements || {};
+      compilation.hooks.htmlWebpackPluginAfterHtmlProcessing.tapAsync('HtmlWebpackWrapHtmlPlugin',
+        (htmlPluginData, callback) => {
+          const options = htmlPluginData.plugin.options;
+          if (options.before) {
+            htmlPluginData.html = options.before + "\n" + htmlPluginData.html;
+          }
+          if (options.after) {
+            htmlPluginData.html += "\n" + options.after;
+          }
+
+          callback(null, htmlPluginData);
+        }
+      );
+    });
+  }
 }
-HtmlWebpackWrapHtmlPlugin.prototype.apply = function(compiler) {
-	var self = this;
-	compiler.plugin('compilation', function(compilation) {
-		compilation.plugin('html-webpack-plugin-after-html-processing', function(htmlPluginData, callback) {
-			var options = htmlPluginData.plugin.options;
-			if (options.before) {
-				htmlPluginData.html = options.before + "\n" + htmlPluginData.html;
-			}
-			if (options.after) {
-				htmlPluginData.html += "\n" + options.after;
-			}
 
-			callback(null, htmlPluginData);
-		});
-	});
-};
 module.exports = HtmlWebpackWrapHtmlPlugin;
